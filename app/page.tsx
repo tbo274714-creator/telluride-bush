@@ -278,8 +278,6 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   height={36}
   className="object-contain filter invert"
 />
-
-  />
 </div>
             <div className="flex flex-col leading-none font-mono">
               <span className="text-xl font-black tracking-[0.2em] uppercase text-white [text-shadow:1px_1px_0_#000,2px_2px_0_#7c3813]">
