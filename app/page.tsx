@@ -703,11 +703,11 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
                  <iframe
-  className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
-  src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
-  allowFullScreen
-  frameBorder="0"
-/>
+                 className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
+                 src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
+                 allowFullScreen
+                 frameBorder="0"
+                 />
 
                 </div>
               </div>
