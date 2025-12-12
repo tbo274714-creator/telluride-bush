@@ -234,15 +234,18 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/youtube/latest")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.videos) {
-          setVideos(data.videos);
-        }
-      })
-      .catch((err) => console.error("Failed to load videos", err));
-  }, []);
+  // Static fallback for GitHub Pages (no API routes)
+  setVideos([
+    {
+      id: "cup1",
+      title: "Challengers Cup 1 – Grand Finals",
+      desc: "",
+      url: "https://www.youtube.com/watch?v=1rYBmm4qyRs",
+      thumbnail: "https://i.ytimg.com/vi/1rYBmm4qyRs/hqdefault.jpg",
+    },
+  ]);
+}, []);
+
 
   // owners in org-chart order
   const dave = owners.find((o) => o.name.startsWith("Dave")) as Owner;
