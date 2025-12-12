@@ -187,6 +187,12 @@ const OwnerCard = ({ owner, index }: { owner: Owner; index: number }) => (
 export default function Home() {
   const [videos, setVideos] = useState<Video[]>([]);
   const nextMatch = upcomingMatches[0];
+
+    const twitchParent =
+    typeof window !== "undefined"
+      ? window.location.hostname
+      : "localhost";
+
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   // Secret terminal state
@@ -696,13 +702,13 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   className="aspect-video w-full bg-repeat border border-[#f26a1b]/60"
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
-                  <iframe
-                    className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
-                    src="https://player.twitch.tv/?channel=bushsquatch&parent=localhost"
-                    title="bushsquatch Twitch stream"
-                    allowFullScreen
-                    frameBorder="0"
-                  />
+                 <iframe
+  className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
+  src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
+  allowFullScreen
+  frameBorder="0"
+/>
+
                 </div>
               </div>
             </div>
@@ -717,13 +723,13 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   className="aspect-video w-full bg-repeat border border-zinc-700"
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
-                  <iframe
-                    className="h-full w-full grayscale"
-                    src="https://player.twitch.tv/?channel=jerseyjerry&parent=localhost"
-                    title="jerseyjerry Twitch stream"
-                    allowFullScreen
-                    frameBorder="0"
-                  />
+                 <iframe
+  className="h-full w-full grayscale"
+  src={`https://player.twitch.tv/?channel=jerseyjerry&parent=${twitchParent}`}
+  allowFullScreen
+  frameBorder="0"
+/>
+
                 </div>
               </div>
             </div>
