@@ -187,6 +187,7 @@ const OwnerCard = ({ owner, index }: { owner: Owner; index: number }) => (
 export default function Home() {
   const [videos, setVideos] = useState<Video[]>([]);
   const nextMatch = upcomingMatches[0];
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   // Secret terminal state
   const [terminalOpen, setTerminalOpen] = useState(false);
@@ -270,12 +271,14 @@ export default function Home() {
             className="cursor-pointer flex items-center gap-4 group"
           >
           <div className="relative h-11 w-11 flex items-center justify-center rounded-sm">
-  <Image
-    src="/logo-bush.png"
-    alt="Telluride Bush Logo"
-    width={36}
-    height={36}
-    className="object-contain filter invert"
+ <img
+  src={`${base}/logo-bush.png`}
+  alt="Telluride Bush Logo"
+  width={36}
+  height={36}
+  className="object-contain filter invert"
+/>
+
   />
 </div>
             <div className="flex flex-col leading-none font-mono">
@@ -426,13 +429,14 @@ export default function Home() {
           </div>
 
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 opacity-10 mix-blend-overlay pointer-events-none z-0">
-            <Image
-              src="/logo-bush.png"
-              alt=""
-              width={600}
-              height={600}
-              className="filter invert contrast-200 grayscale"
-            />
+            <img
+  src={`${base}/logo-bush.png`}
+  alt=""
+  width={600}
+  height={600}
+  className="filter invert contrast-200 grayscale"
+/>
+
           </div>
         </section>
 
