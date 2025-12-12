@@ -20,7 +20,7 @@ const DOT_TEXTURE =
 
 const MERCH_URL =
   "https://store.barstoolsports.com/search?q=bush+gaming&_pos=2&_psq=bush&_ss=e&_v=1.0";
-const SHOVEL_URL = "#"; // secret shovel link, only shown in terminal
+const SHOVEL_URL = "https://a.co/d/9grUKhJ"; // secret shovel link, only shown in terminal
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@tBushGaming";
 const SECRET_PASSCODE = "bounceonitking";
 
@@ -703,11 +703,12 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
                  <iframe
-                 className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
-                 src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
-                 allowFullScreen
-                 frameBorder="0"
-                 />
+  className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
+  src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
+  allowFullScreen
+  frameBorder="0"
+/>
+
 
                 </div>
               </div>
