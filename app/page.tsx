@@ -259,7 +259,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
     },
     {
       id: "vid4",
-      title: "Video Title 4",
+      title: "Best of Challenger Cup Day 1 - Bush Gaming Highlights",
       desc: "",
       url: "https://youtu.be/GaL_Pzr-Mg8?si=9tihPXfZptx6UpLq",
       thumbnail: "https://i.ytimg.com/vi/GaL_Pzr-Mg8/hqdefault.jpg",
