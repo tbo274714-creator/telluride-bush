@@ -235,7 +235,6 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   }, []);
 
   useEffect(() => {
-  // Static fallback for GitHub Pages (no API routes)
   setVideos([
     {
       id: "cup1",
@@ -244,8 +243,30 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
       url: "https://www.youtube.com/watch?v=1rYBmm4qyRs",
       thumbnail: "https://i.ytimg.com/vi/1rYBmm4qyRs/hqdefault.jpg",
     },
+    {
+      id: "vid2",
+      title: "Best Plays AND Funniest Moments From Championship Sunday",
+      desc: "",
+      url: "https://youtu.be/qcE3z5Z_HwY?si=KiUZ8uNIUmjdQYjO",
+      thumbnail: "https://i.ytimg.com/vi/qcE3z5Z_HwY/hqdefault.jpg",
+    },
+    {
+      id: "vid3",
+      title: "Best of Scrap on the Bush Gaming Watch Party",
+      desc: "",
+      url: "https://youtu.be/hkKloT38XA4?si=Y5xHE7uL8IR-j7gV",
+      thumbnail: "https://i.ytimg.com/vi/hkKloT38XA4/hqdefault.jpg",
+    },
+    {
+      id: "vid4",
+      title: "Video Title 4",
+      desc: "",
+      url: "https://youtu.be/GaL_Pzr-Mg8?si=9tihPXfZptx6UpLq",
+      thumbnail: "https://i.ytimg.com/vi/GaL_Pzr-Mg8/hqdefault.jpg",
+    },
   ]);
 }, []);
+
 
 
   // owners in org-chart order
