@@ -15,12 +15,13 @@ function decodeHtml(html: string) {
 // Moves massive base64 strings out of the JSX for cleaner code
 const GRUNGE_TEXTURE =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXV0dHR4eHh2dnZ6enp8fHx5eXl+fn5ycHJzc3N/f39xcXFwcHBzc3N0dHR2dnZ4eHh6enp8fHx+fn5/f3+Hh4eKioqNjY2QkJCUlJSYmJicnJygmJijmZikmpqmnJynnZ2ooaGpo6OqpKSrpqa9u7v///8rKysAAAAPnRSTlMABgcICQ4PEBESExQVFhcYGRscHR8gISIkJSYnKCkqKy4vMDIzNDY3ODw9Pj9AQUJDRUdJSkxNT1BSU1RYWVtdYWJjZGVnaGlqa21ucXZ4en1+gYOGiImKjY6RkpWXmZqfoaOlpqeqra+wsbK0tba4u72/wcPExcbIycvMzs/R0tTY2dzd3t/h4uTm6Orr7e7w8vP19vf5+vv9/v4AfjBvAAAAAXRSTlMAnZg8kQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+UFDA0lE5yXnJMAAAAGdEVYdENvbW1lbnQAa6e7FwAAAlJJREFUeNq1lsWO2zAMRHWp85Z6//9v302C1k4c99A6i02dI4m2RImH04n+d6bT6U+hH9s3/bA+7P5Bv2z/oV+3f9Av2+80/bJ90y/b77R/2C/rQ2n7c/umP7bfaX9s/6A/tofav9u30+k32z9o/6DfaX9u/6H9u32n/bf9R9r/2/5L+/fP7Tvtf+0/tN/7H9o/6HfaP9t/aP9v32n/bf+R9v/2H9p/2X+n/bf990/tn+0/tH+376dDaf9p/6X9+/u2/4/9h/Zf9l+n03/bf6P9p/2H9r+3/532H/bfaf9t/23/bf+V9j+3/9L+5/Yf2n/Yf6eN9l9p/2v/rf0/7D+0/7b/SPtv+4+0/7b/0v7ntm+nQ2n/a/91Ov1u+2/7b/sv7b/sv9L+1/5L+/f37X+n/dP+Q/tv+4+0/7b/tv92Ov1N+w/tH/Q77X9u/5F2tH/Q77R/t/+Q9r/232n/bf+V9j+3/9L+5/Yf2n/oV9p/2P9K+2f7H2n/bf+R9t/2X9r/2/5b+/f3bf+h/df9X9p/2H/bf6f9p/1X2v9c/6X9x/132r/b/yvtv+w/tP+1/9D+x/4b7b/tP7T/uf2H9t/2H2n/bf+V9j+3/9L+/X37f6f9h/Z7/4H2H/bf9t/2306n32z/lfa/9t/av9t32n/bf6T9v/2X9v/2X2n/c/u9/0D7D/vvT6H9h/2H9t/2H2n/bf+l/b/9t/a/9p32n/Zfaf9r/6X9//2H9k/6lfa/9v+d9u/2H9q/23+k/b/9l/a/t/9K+1/7b/vv+5/a/9t/aP9l/6H9h/1H2n/bf6T9r/1/2j/od9p/239r//7/fX8Bl008u883bOQAAAAASUVORK5CYII=";
+
 const DOT_TEXTURE =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABNJREFUGFdjZGD4/5+BgYFRgAEAMEEB/6j3MgkAAAAASUVORK5CYII=";
 
 const MERCH_URL =
   "https://store.barstoolsports.com/search?q=bush+gaming&_pos=2&_psq=bush&_ss=e&_v=1.0";
-const SHOVEL_URL = "https://a.co/d/9grUKhJ"; // secret shovel link, only shown in terminal
+const SHOVEL_URL = "https://a.co/d/9grUKhJ";
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@tBushGaming";
 const SECRET_PASSCODE = "bounceonitking";
 
@@ -101,6 +102,34 @@ const owners = [
   },
 ];
 
+// NEW: COACHING / FRONT OFFICE (3 slots)
+const staff = [
+  {
+    name: "Temp",
+    role: "Head Coach",
+    socials: {
+      twitch: "https://www.twitch.tv/temp",
+      twitter: "https://x.com/Temp",
+    },
+  },
+  {
+    name: "Jace",
+    role: "General Manager",
+    socials: {
+      twitch: "https://www.twitch.tv/trikkplays",
+      twitter: "https://x.com/TrikkPlays",
+    },
+  },
+  {
+    name: "Sweggy",
+    role: "Community Manager",
+    socials: {
+      twitch: "https://www.twitch.tv/xsweggy",
+      twitter: "https://x.com/SweggyCOD",
+    },
+  },
+];
+
 const upcomingMatches = [
   {
     date: "Dec 13, 2025",
@@ -146,8 +175,8 @@ const TacticalHeader = ({
   subtitle?: string;
 }) => (
   <div className="border-b-2 border-[#1d4f52]/60 pb-4 relative">
-    <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#f26a1b]/70"></div>
-    <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#f26a1b]/70"></div>
+    <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#f26a1b]/70" />
+    <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#f26a1b]/70" />
     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#3ab7aa] mb-2 font-mono">
       <span>[ :: ]</span>
       <span>{subtitle || "INTEL"}</span>
@@ -167,7 +196,7 @@ const OwnerCard = ({ owner, index }: { owner: Owner; index: number }) => (
     </div>
 
     <p className="text-lg font-black text-white uppercase">{owner.name}</p>
-    <div className="my-2 h-px w-full bg-gradient-to-r from-[#f26a1b]/70 to-transparent"></div>
+    <div className="my-2 h-px w-full bg-gradient-to-r from-[#f26a1b]/70 to-transparent" />
     <p className="text-xs text-[#3ab7aa] uppercase tracking-wider font-mono font-bold">
       Stake: {owner.percent}
     </p>
@@ -184,16 +213,49 @@ const OwnerCard = ({ owner, index }: { owner: Owner; index: number }) => (
   </div>
 );
 
+type StaffMember = (typeof staff)[number];
+
+const StaffCard = ({ s, index }: { s: StaffMember; index: number }) => (
+  <div className="group relative bg-[#171b20]/70 border-2 border-[#242833] p-5 transition-all duration-300 hover:border-[#3ab7aa] hover:bg-[#171b20] clip-path-polygon-[0_0,100%_0,100%_90%,90%_100%,0_100%]">
+    <div className="absolute top-0 right-0 bg-zinc-800 text-zinc-500 font-mono text-[10px] px-2 py-0.5 border-l border-b border-zinc-700 group-hover:border-[#3ab7aa] group-hover:text-[#7ee7dc]">
+      {index.toString().padStart(2, "0")}
+    </div>
+
+    <p className="text-lg font-black text-white uppercase">{s.name}</p>
+    <div className="my-2 h-px w-full bg-gradient-to-r from-[#3ab7aa]/70 to-transparent" />
+    <p className="text-xs text-[#3ab7aa] uppercase tracking-wider font-mono font-bold">
+      Role: {s.role}
+    </p>
+
+    <div className="mt-4 flex gap-3 font-mono text-[10px] font-bold uppercase tracking-widest">
+      <a
+        href={s.socials.twitch}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-zinc-700 px-2 py-1 text-zinc-400 hover:border-[#f26a1b] hover:text-[#ff8a3d] hover:bg-[#f26a1b]/10 transition-all"
+      >
+        Twitch
+      </a>
+      <a
+        href={s.socials.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-zinc-700 px-2 py-1 text-zinc-400 hover:border-[#f26a1b] hover:text-[#ff8a3d] hover:bg-[#f26a1b]/10 transition-all"
+      >
+        X
+      </a>
+    </div>
+  </div>
+);
+
 export default function Home() {
   const [videos, setVideos] = useState<Video[]>([]);
   const nextMatch = upcomingMatches[0];
 
-    const twitchParent =
-    typeof window !== "undefined"
-      ? window.location.hostname
-      : "localhost";
+  const twitchParent =
+    typeof window !== "undefined" ? window.location.hostname : "localhost";
 
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   // Secret terminal state
   const [terminalOpen, setTerminalOpen] = useState(false);
@@ -206,15 +268,10 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const openTerminal = () => {
     setTerminalOpen(true);
     setTerminalStage("loading");
-    // fake boot time
-    setTimeout(() => {
-      setTerminalStage("ready");
-    }, 1500);
+    setTimeout(() => setTerminalStage("ready"), 1500);
   };
 
-  const closeTerminal = () => {
-    setTerminalOpen(false);
-  };
+  const closeTerminal = () => setTerminalOpen(false);
 
   const handlePasscodeSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -232,55 +289,58 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   // ESC closes terminal
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setTerminalOpen(false);
-      }
+      if (e.key === "Escape") setTerminalOpen(false);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Static videos (Option B)
   useEffect(() => {
-  setVideos([
-    {
-      id: "cup1",
-      title: "Challengers Cup 1 – Grand Finals",
-      desc: "",
-      url: "https://www.youtube.com/watch?v=1rYBmm4qyRs",
-      thumbnail: "https://i.ytimg.com/vi/1rYBmm4qyRs/hqdefault.jpg",
-    },
-    {
-      id: "vid2",
-      title: "Best Plays AND Funniest Moments From Championship Sunday",
-      desc: "",
-      url: "https://youtu.be/qcE3z5Z_HwY?si=KiUZ8uNIUmjdQYjO",
-      thumbnail: "https://i.ytimg.com/vi/qcE3z5Z_HwY/hqdefault.jpg",
-    },
-    {
-      id: "vid3",
-      title: "Best of Scrap on the Bush Gaming Watch Party",
-      desc: "",
-      url: "https://youtu.be/hkKloT38XA4?si=Y5xHE7uL8IR-j7gV",
-      thumbnail: "https://i.ytimg.com/vi/hkKloT38XA4/hqdefault.jpg",
-    },
-    {
-      id: "vid4",
-      title: "Best of Challenger Cup Day 1 - Bush Gaming Highlights",
-      desc: "",
-      url: "https://youtu.be/GaL_Pzr-Mg8?si=9tihPXfZptx6UpLq",
-      thumbnail: "https://i.ytimg.com/vi/GaL_Pzr-Mg8/hqdefault.jpg",
-    },
-  ]);
-}, []);
-
-
+    setVideos([
+      {
+        id: "cup1",
+        title: "Challengers Cup 1 – Grand Finals",
+        desc: "",
+        url: "https://www.youtube.com/watch?v=1rYBmm4qyRs",
+        thumbnail: "https://i.ytimg.com/vi/1rYBmm4qyRs/hqdefault.jpg",
+      },
+      {
+        id: "vid2",
+        title: "Best Plays AND Funniest Moments From Championship Sunday",
+        desc: "",
+        url: "https://youtu.be/qcE3z5Z_HwY?si=KiUZ8uNIUmjdQYjO",
+        thumbnail: "https://i.ytimg.com/vi/qcE3z5Z_HwY/hqdefault.jpg",
+      },
+      {
+        id: "vid3",
+        title: "Best of Scrap on the Bush Gaming Watch Party",
+        desc: "",
+        url: "https://youtu.be/hkKloT38XA4?si=Y5xHE7uL8IR-j7gV",
+        thumbnail: "https://i.ytimg.com/vi/hkKloT38XA4/hqdefault.jpg",
+      },
+      {
+        id: "vid4",
+        title: "Best of Challenger Cup Day 1 - Bush Gaming Highlights",
+        desc: "",
+        url: "https://youtu.be/GaL_Pzr-Mg8?si=9tihPXfZptx6UpLq",
+        thumbnail: "https://i.ytimg.com/vi/GaL_Pzr-Mg8/hqdefault.jpg",
+      },
+    ]);
+  }, []);
 
   // owners in org-chart order
   const dave = owners.find((o) => o.name.startsWith("Dave")) as Owner;
   const austin = owners.find((o) => o.name.startsWith("Austin")) as Owner;
-  const jerry = owners.find((o) => o.name.toLowerCase().includes("jerry")) as Owner;
-  const mook = owners.find((o) => o.name.toLowerCase().includes("mook")) as Owner;
-  const harry = owners.find((o) => o.name.toLowerCase().includes("harry")) as Owner;
+  const jerry = owners.find((o) =>
+    o.name.toLowerCase().includes("jerry")
+  ) as Owner;
+  const mook = owners.find((o) =>
+    o.name.toLowerCase().includes("mook")
+  ) as Owner;
+  const harry = owners.find((o) =>
+    o.name.toLowerCase().includes("harry")
+  ) as Owner;
 
   return (
     <main className="min-h-screen bg-[#040507] text-neutral-100 selection:bg-[#f26a1b]/30 relative font-sans">
@@ -297,15 +357,15 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="cursor-pointer flex items-center gap-4 group"
           >
-          <div className="relative h-11 w-11 flex items-center justify-center rounded-sm">
- <img
-  src={`${base}/logo-bush.png`}
-  alt="Telluride Bush Logo"
-  width={36}
-  height={36}
-  className="object-contain filter invert"
-/>
-</div>
+            <div className="relative h-11 w-11 flex items-center justify-center rounded-sm">
+              <img
+                src={`${base}/logo-bush.png`}
+                alt="Telluride Bush Logo"
+                width={36}
+                height={36}
+                className="object-contain filter invert"
+              />
+            </div>
             <div className="flex flex-col leading-none font-mono">
               <span className="text-xl font-black tracking-[0.2em] uppercase text-white [text-shadow:1px_1px_0_#000,2px_2px_0_#7c3813]">
                 BUSH
@@ -318,13 +378,13 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
           {/* NAVIGATION */}
           <nav className="hidden md:flex gap-6 text-xs items-center font-bold uppercase tracking-widest font-mono">
-          {[
-  ["Structure", "#owners"],
-  ["Roster", "#roster"],
-  ["Schedule", "#schedule"],
-  ["Live", "#twitch"],
-].map(([label, link]) => (
-
+            {[
+              ["Structure", "#owners"],
+              ["Staff", "#staff"],
+              ["Roster", "#roster"],
+              ["Schedule", "#schedule"],
+              ["Live", "#twitch"],
+            ].map(([label, link]) => (
               <a
                 key={label}
                 href={link}
@@ -394,8 +454,9 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                     MISSIONS
                   </span>
                 </span>
-                <div className="absolute inset-0 h-full w-full scale-y-0 bg-white/30 transition-transform duration-300 group-hover:scale-y-100 origin-bottom"></div>
+                <div className="absolute inset-0 h-full w-full scale-y-0 bg-white/30 transition-transform duration-300 group-hover:scale-y-100 origin-bottom" />
               </a>
+
               <a
                 href="#videos"
                 className="group relative inline-flex items-center justify-center overflow-hidden border-2 border-[#3ab7aa]/70 bg-transparent px-8 py-4 font-mono font-black uppercase tracking-widest text-zinc-300 transition-all hover:border-[#f26a1b] hover:text-[#ff8a3d] clip-path-polygon-[10px_0,100%_0,100%_calc(100%-10px),calc(100%-10px)_100%,0_100%,0_10px] glitch-link"
@@ -413,14 +474,14 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
           <div className="relative z-10 bg-black/80 border-[3px] border-zinc-700 p-1 shadow-[0_0_30px_rgba(0,0,0,0.8)] clip-path-polygon-[20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%,0_20px]">
             <div className="border border-[#7c3813]/60 bg-zinc-900/80 p-6 relative">
-              <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-[#ff8a3d]"></div>
-              <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-[#ff8a3d]"></div>
-              <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-[#ff8a3d]"></div>
-              <div className="absolute bottom-1 right-1 w-1.5 h-1.5 bg-[#ff8a3d]"></div>
+              <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-[#ff8a3d]" />
+              <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-[#ff8a3d]" />
+              <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-[#ff8a3d]" />
+              <div className="absolute bottom-1 right-1 w-1.5 h-1.5 bg-[#ff8a3d]" />
 
               <div className="flex items-center gap-2 mb-4">
-                <div className="h-2 w-2 bg-[#b3261e] rounded-full animate-ping absolute opacity-75"></div>
-                <div className="h-2 w-2 bg-[#b3261e] rounded-full relative"></div>
+                <div className="h-2 w-2 bg-[#b3261e] rounded-full animate-ping absolute opacity-75" />
+                <div className="h-2 w-2 bg-[#b3261e] rounded-full relative" />
                 <p className="text-xs uppercase tracking-[0.25em] text-[#3ab7aa] font-black font-mono">
                   Next Match
                 </p>
@@ -455,13 +516,12 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 opacity-10 mix-blend-overlay pointer-events-none z-0">
             <img
-  src={`${base}/logo-bush.png`}
-  alt=""
-  width={600}
-  height={600}
-  className="filter invert contrast-200 grayscale"
-/>
-
+              src={`${base}/logo-bush.png`}
+              alt=""
+              width={600}
+              height={600}
+              className="filter invert contrast-200 grayscale"
+            />
           </div>
         </section>
 
@@ -486,10 +546,22 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
           </div>
         </section>
 
+        {/* STAFF (NEW) */}
+        <section id="staff" className="space-y-12 scroll-mt-32">
+          <TacticalHeader title="Front Office" subtitle="COACHING STAFF" />
+          <SectionDivider numeral="II" />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {staff.map((s, i) => (
+              <StaffCard key={s.name + s.role} s={s} index={i + 1} />
+            ))}
+          </div>
+        </section>
+
         {/* ROSTER */}
         <section id="roster" className="space-y-12 scroll-mt-32">
           <TacticalHeader title="Active Unit" subtitle="OPERATORS" />
-          <SectionDivider numeral="II" />
+          <SectionDivider numeral="III" />
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             {roster.map((p, i) => (
@@ -497,10 +569,10 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                 key={p.name}
                 className="relative group bg-[#111318] border-[3px] border-[#242833] p-1 shadow-[inset_0_0_20px_rgba(0,0,0,1)] transition-all hover:border-[#7c3813]/70"
               >
-                <div className="absolute top-1 left-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
-                <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
-                <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
-                <div className="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"></div>
+                <div className="absolute top-1 left-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" />
+                <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" />
+                <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" />
+                <div className="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full bg-zinc-700 border border-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" />
 
                 <div className="bg-zinc-900/50 p-6 text-center relative overflow-hidden">
                   <div className="absolute -top-2 -left-2 text-5xl font-black text-zinc-800/50 font-mono z-0 select-none group-hover:text-[#7c3813]/40 transition-colors">
@@ -510,10 +582,8 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   <h3 className="relative z-10 text-2xl font-black text-white uppercase tracking-tight mb-2 [text-shadow:2px_2px_0_#000]">
                     {p.name}
                   </h3>
-                  <div className="relative z-10 h-0.5 w-12 mx-auto bg-[#f26a1b] mb-3"></div>
+                  <div className="relative z-10 h-0.5 w-12 mx-auto bg-[#f26a1b] mb-3" />
                   <p className="relative z-10 text-xs text-[#3ab7aa] font-mono uppercase tracking-tight">
-                  
-                    <br />
                     Unshaven since November 2025
                   </p>
 
@@ -536,6 +606,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                     </a>
                   </div>
                 </div>
+
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-repeat"
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
@@ -548,7 +619,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
         {/* SCHEDULE */}
         <section id="schedule" className="space-y-12 scroll-mt-32 relative z-10">
           <TacticalHeader title="Match Schedule" subtitle="MISSION LOG" />
-          <SectionDivider numeral="III" />
+          <SectionDivider numeral="IV" />
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
@@ -593,7 +664,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                     className="relative flex justify-between items-center gap-4 border-l-[6px] border-zinc-800 bg-zinc-900/30 pl-4 py-3 pr-3"
                   >
                     {m.result === "1st Place" && (
-                      <div className="absolute inset-0 bg-[#f26a1b]/5 pointer-events-none border-b border-[#f26a1b]/20"></div>
+                      <div className="absolute inset-0 bg-[#f26a1b]/5 pointer-events-none border-b border-[#f26a1b]/20" />
                     )}
                     <div>
                       <p className="text-zinc-200 font-bold uppercase tracking-tight">
@@ -624,7 +695,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
         {/* VIDEOS */}
         <section id="videos" className="space-y-8 scroll-mt-32 relative z-10">
           <TacticalHeader title="Theater Mode" subtitle="VODS" />
-          <SectionDivider numeral="IV" />
+          <SectionDivider numeral="V" />
 
           <div className="flex justify-end">
             <a
@@ -654,7 +725,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   <div className="aspect-video relative overflow-hidden bg-black border border-zinc-700 group-hover:border-[#f26a1b]/60 transition-all">
                     <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/50">
                       <div className="w-12 h-12 rounded-full border-2 border-[#ff8a3d] flex items-center justify-center bg-[#f26a1b]/20">
-                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-[#ff8a3d] border-b-[8px] border-b-transparent ml-1"></div>
+                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-[#ff8a3d] border-b-[8px] border-b-transparent ml-1" />
                       </div>
                     </div>
                     {v.thumbnail ? (
@@ -689,12 +760,12 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
         {/* TWITCH */}
         <section id="twitch" className="space-y-12 scroll-mt-32 relative z-10">
           <TacticalHeader title="Live Streams" subtitle="SAT-LINK" />
-          <SectionDivider numeral="V" />
+          <SectionDivider numeral="VI" />
 
           <div className="grid md:grid-cols-2 gap-10">
             <div className="relative">
               <div className="flex items-center gap-2 mb-2 font-mono text-xs text-[#ff8a3d] font-bold uppercase">
-                <span className="h-2 w-2 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="h-2 w-2 bg-red-500 rounded-full animate-pulse" />
                 Live: bushsquatch
               </div>
               <div className="border-4 border-[#7c3813] bg-black p-1 shadow-[0_0_24px_rgba(242,106,27,0.4)] clip-path-polygon-[20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%,0_20px]">
@@ -702,21 +773,20 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   className="aspect-video w-full bg-repeat border border-[#f26a1b]/60"
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
-                 <iframe
-  className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
-  src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
-  allowFullScreen
-  frameBorder="0"
-/>
-
-
+                  <iframe
+                    className="h-full w-full mix-blend-luminosity hover:mix-blend-normal transition-all opacity-90 hover:opacity-100"
+                    src={`https://player.twitch.tv/?channel=bushsquatch&parent=${twitchParent}`}
+                    title="bushsquatch Twitch stream"
+                    allowFullScreen
+                    frameBorder="0"
+                  />
                 </div>
               </div>
             </div>
 
             <div className="relative opacity-70 hover:opacity-100 transition-opacity">
               <div className="flex items-center gap-2 mb-2 font-mono text-xs text-zinc-500 font-bold uppercase">
-                <span className="h-2 w-2 bg-zinc-500 rounded-full"></span>
+                <span className="h-2 w-2 bg-zinc-500 rounded-full" />
                 Channel: jerseyjerry
               </div>
               <div className="border-4 border-zinc-800 bg-black p-1 clip-path-polygon-[20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%,0_20px]">
@@ -724,13 +794,13 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                   className="aspect-video w-full bg-repeat border border-zinc-700"
                   style={{ backgroundImage: `url('${DOT_TEXTURE}')` }}
                 >
-                 <iframe
-  className="h-full w-full grayscale"
-  src={`https://player.twitch.tv/?channel=jerseyjerry&parent=${twitchParent}`}
-  allowFullScreen
-  frameBorder="0"
-/>
-
+                  <iframe
+                    className="h-full w-full grayscale"
+                    src={`https://player.twitch.tv/?channel=jerseyjerry&parent=${twitchParent}`}
+                    title="jerseyjerry Twitch stream"
+                    allowFullScreen
+                    frameBorder="0"
+                  />
                 </div>
               </div>
             </div>
@@ -742,7 +812,9 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
           <div className="flex justify-between items-center flex-wrap gap-4">
             <p>
               // © {new Date().getFullYear()} TELLURIDE BUSH.
-              <span className="text-[#ff8a3d] ml-2 font-black">[ #UNSHAVEN ]</span>
+              <span className="text-[#ff8a3d] ml-2 font-black">
+                [ #UNSHAVEN ]
+              </span>
             </p>
             <a
               href={MERCH_URL}
@@ -846,38 +918,9 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                     [BOOT] Initializing BUSH OS kernel...
                   </span>
                 </div>
-                {/* ...rest of loading section */}
               </>
             ) : (
               <>
-                <pre className="text-[9px] sm:text-[10px] leading-tight mb-4">
-{String.raw`
-                                                           -+*#%%%#***********#%%%%%%#:
-                                                        =#@@@@*-.           -%@@@@@@%-
-                                                       +@@@@@=            :*@@@@@@%+.
-                                                      +@@@@@=           .*%@@@@@#=.
-                                                     +@@@@@=          .+@@@@@@#-
-                                                    =@@@@%=           -======:
-                                                   =@@@@@=       .::::::::::::::::::
-                                                  =@@@@%=       :%@@@#+========+%@@@%+
-                                                 =@@@@%=        -@@%-           =@@@@%
-                                                =@@@@%-         -@+.            *@@@#.
-                                               =@@@@%-          :-             .%@@#.
-                                              =@@@@%-                          =@@%.
-                                             =@@@@%-                           %@%:
-                                            =@@@@%-                          :*%*.
-                                           =@@@@%-                     .:=+**+-.
-                                          =%@@@%-                .:-+*%%#*=:
-                                         =%@@@%-           .:-+*%@@@#+-.
-                                        -%@@@%-      .:=+*#%@@@%#+-.
-                                       -%@@@@= .:=+*#%@@@@@%#+:.
-                                      -%@@@@@%%%@@@@@@@%*=:.
-                                      %@@@@@@@@@@@@%*=:
-                                      =%@@@@@@%#*=:
-                                       :+#%%*=:`
-}
-                </pre>
-
                 <p className="mb-3">
                   Welcome, operator. Your access code has been{" "}
                   <span className="text-[#ff8a3d]">verified</span>. Activity in
@@ -885,8 +928,8 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                 </p>
 
                 <p className="mb-4">
-                  What follows is not for public knowledge. Keep this link away from
-                  the chat.
+                  What follows is not for public knowledge. Keep this link away
+                  from the chat.
                 </p>
 
                 <div className="border border-[#3ab7aa]/60 p-3 mb-4 bg-black/60">
@@ -910,10 +953,6 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
                 >
                   EXECUTE: TOP SECRET SHOVEL LINK
                 </a>
-
-                <p className="mt-6 text-[10px] text-[#3ab7aa]/60">
-
-                </p>
               </>
             )}
           </div>
